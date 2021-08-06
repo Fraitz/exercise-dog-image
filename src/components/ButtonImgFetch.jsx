@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ButtonImgFetch extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() { 
+  render() {
     const { fetchImg } = this.props;
-    return ( 
-      <>
-        <button onClick={ () => fetchImg() }>Buscar Novo Dog</button>
-      </>
-     );
+    return (
+      <button type="button" onClick={ () => fetchImg() }>Buscar Novo Dog</button>
+    );
   }
 }
- 
+
+ButtonImgFetch.propTypes = {
+  fetchImg: PropTypes.func,
+}.isRequired;
+
 export default ButtonImgFetch;
